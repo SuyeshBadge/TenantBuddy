@@ -6,5 +6,7 @@ urlpatterns = [
     path('index', index, name='index'),
     path('about', about, name='about'),
     path('room', rooms, name='rooms'),
-    path('owner', owner, name='owner')
+    path('owner/<Oid>', owner, name='owner'),
+    path('login', login, name='login'),
+    path('register', register, name='register')
 ]

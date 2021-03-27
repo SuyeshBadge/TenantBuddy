@@ -11,7 +11,11 @@ class Owner(models.Model):
     oEmail = models.EmailField(unique=True)
     oPassword = models.CharField(max_length=128)
     oMobile = models.BigIntegerField()
+    oGender = models.CharField(max_length=4)
     oDOB = models.DateField()
+
+    def __str__(self):
+        return f'{self.oFname} {self.oLname}'
 
 
 class Room(models.Model):
