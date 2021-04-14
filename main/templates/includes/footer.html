@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 {% load static %}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.7/typed.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.7/typed.min.js"></script>
-        <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+{% if error %}
+<div class=" overflow-visible  animate__animated animate__delay-4s animate__fadeOut">
+        <div class="bg-yellow-200 text-xl rounded px-4 m-auto animate__animated animate__backInDown text-center "
+                role="alert" style="width: min-content">
 
-        <script type="text/javascript" src="{% static 'js/myjs.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/popper.js' %}"></script>
+                <strong class=" text-center">{{ error }}</strong>
+        </div>
+</div>
+
+{% endif %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.7/typed.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.7/typed.min.js"></script>
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'js/myjs.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/popper.js' %}"></script>

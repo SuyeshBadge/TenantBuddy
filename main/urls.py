@@ -7,6 +7,10 @@ urlpatterns = [
     path('about', about, name='about'),
     path('room', rooms, name='rooms'),
     path('owner/<Oid>', owner, name='owner'),
+    path('profile/<Oid>', profile, name='profile'),
     path('login', login, name='login'),
-    path('register', register, name='register')
+    path('register', register, name='register'),
+    path('addroom/<Oid>', addroom, name='addroom'),
+
+
 ]

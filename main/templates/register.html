@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/regStyle.css' %}">
+
     <title>Register</title>
 </head>
 <!-- Styling -->
@@ -15,14 +16,14 @@
 <!-- End Styling -->
 
 <body>
-    <div class=" container d-flex justify-content-center ">
-        <div class="card m-auto mid">
-            <div class="card-title">
+    <div class=" container ">
+        <div class="  ">
+            <div class="">
                 <h3 class="text-center text-primary">Register</h3>
 
             </div>
 
-            <div class="card-body d-flex justify-content-center">
+            <div class=" d-flex justify-content-center p-4   ">
                 <form action="register" method="post">
                     {% csrf_token %}
                     <!-- First Name -->
@@ -67,6 +68,13 @@
 
 
                     </div>
+                    <!-- Date of Birth -->
+                    <div class="group">
+                        <input type="date" name="dob" id="today" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Date of Birth</label>
+                    </div>
                     <!-- Password -->
                     <div class="group">
                         <input type="password" name="pass1" id="pass1" required>
@@ -80,13 +88,7 @@
                         <span class="bar"></span>
                         <label>Confirm Password</label>
                     </div>
-                    <!-- Date of Birth -->
-                    <div class="group">
-                        <input type="date" name="dob" id="today" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label>Date of Birth</label>
-                    </div>
+
 
                     <!-- Submit -->
                     <div class=" text-center">
@@ -100,10 +102,10 @@
     </div>
 
     {% include "includes/footer.html" %}
-    <script>
+    <!-- <script>
         let today = new Date().toISOString().substr(0, 10);
         document.querySelector("#today").value = today;
-    </script>
+    </script> -->
 </body>
 
 </html>

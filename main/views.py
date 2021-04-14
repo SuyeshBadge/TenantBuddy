@@ -14,7 +14,35 @@ def about(request):
 
 
 def rooms(request):
-    return render(request, 'rooms.html')
+    rooms = Room.objects.all()
+
+    l = [1, 2, 3, 4]
+
+    return render(request, 'rooms.html', {'list': rooms})
+
+
+def addroom(request, Oid):
+    print(Oid)
+    s2byt = Oid.encode("ascii")
+    s2b64byt = base64.b64decode(s2byt)
+    key1 = s2b64byt.decode("ascii")
+    print(key1)
+    uid, fname, lname, login = key1.split('_')
+    user = Owner.objects.get(oId=uid)
+    if request.method == 'POST':
+        room = Room()
+        room.rOid = user
+        room.rAddress = request.POST.get("area")
+        room.rCity = request.POST.get("city")
+        room.rState = request.POST.get("state")
+        room.rShare = request.POST.get("share")
+        room.rPrice = request.POST.get("price")
+        room.rGirlsOnly = request.POST.get("girls")
+        room.save()
+        return render(request, 'addroom.html', {'user': user, 'login': login, 'key': Oid, 'error': 'Room Added SuccessFully'})
+
+    else:
+        return render(request, 'addroom.html', {'user': user, 'login': login, 'key': Oid})
 
 
 def owner(request, Oid):
@@ -25,7 +53,18 @@ def owner(request, Oid):
     print(key1)
     uid, fname, lname, login = key1.split('_')
     user = Owner.objects.get(oId=uid)
-    return render(request, 'owner.html', {'user': user, 'login': login})
+    return render(request, 'owner.html', {'user': user, 'login': login, 'key': Oid, 'error': 'Login Success'})
+
+
+def profile(request, Oid):
+    print(Oid)
+    s2byt = Oid.encode("ascii")
+    s2b64byt = base64.b64decode(s2byt)
+    key1 = s2b64byt.decode("ascii")
+    print(key1)
+    uid, fname, lname, login = key1.split('_')
+    user = Owner.objects.get(oId=uid)
+    return render(request, 'profile.html', {'user': user, 'login': login, 'key': Oid})
 
 
 def register(request):
@@ -75,7 +114,7 @@ def login(request):
                 key = s1b64byt.decode("ascii")
                 return redirect('owner', key)
             else:
-                return render(request, 'login.html', {'error': "Invalid Pass"})
+                return render(request, 'login.html', {'error': "Invalid Password"})
         else:
             return render(request, 'login.html', {'error': "Email Doesn't Exist"})
     else:

@@ -5,7 +5,7 @@ $("#search-icon").click(function() {
 });
 
 $('.menu-toggle').click(function(){
-   $(".nav").toggleClass("mobile-nav");
+   $(".menu").toggleClass("mobile-nav");
    $(this).toggleClass("is-active");
 });
 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% include "Includes/header.html" %} {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Room</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="{% static 'css/regStyle.css' %}"> -->
+</head>
+
+<style></style>
+
+<body class="bg-blue-100 my-32 md:my-52 font-sans">
+    <div class="container mx-auto bg-white text-center w-11/12 md:w-8/12 rounded-lg shadow-lg">
+        <div class="py-10 text-center text-3xl font-bold">Add New Room</div>
+        <div class="form m-2">
+            <form action="/addroom/{{key}}" method="post">
+                {% csrf_token %}
+                <div class="grid grid-cols-1 align-center md:grid-cols-2">
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="area">Address</label>
+
+                        <input
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            type="text" name="area" id="area" placeholder="House No. , Colony" required />
+                    </div>
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="area">City</label>
+
+                        <input
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            type="text" name="city" id="city" placeholder="Eg: Mumbai" required />
+                    </div>
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="area">State</label>
+
+                        <input
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            type="text" name="state" id="state" placeholder="Eg: Maharashtra" required />
+                    </div>
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="area">Sharing</label>
+
+                        <input
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            type="text" name="share" id="share" placeholder="No. of persons per Room" required />
+                    </div>
+
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="area">Price( in INR )</label>
+
+                        <input
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            type="text" name="price" id="price" placeholder="Rent of the Room" required />
+                    </div>
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="area">Only for Girls ?</label>
+                        <div class="pl-3 flex flex-row mt-6 italic font-semibold">
+                            <span class="hover:text-green-500">Yes</span>
+                            <input class="m-2 focus:outline-none" type="radio" name="girls" value="True"
+                                id="girlsYes" />
+                            <span class="hover:text-red-500">No</span>
+                            <input class="m-2 focus:outline-none" type="radio" name="girls" value="False"
+                                id="girlsNo" />
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="submit"
+                        class="transition duration-500 ease-in-out font-bold text-lg bg-blue-300 rounded px-3 py-1 m-3 hover:bg-blue-400 hover:"
+                        value="Submit" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

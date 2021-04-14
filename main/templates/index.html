@@ -2,6 +2,7 @@
 {% include "includes/header.html" %}
 {% load static %}
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
@@ -9,75 +10,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TenantBuddy</title>
 </head>
+<style>
+    body {
+        background-image: url(https://i.imgur.com/3JyslVz.jpg);
+        background-size: 100%;
+        background-position: 0px 90 px;
+        background-repeat: no-repeat;
+        transition: all linear 2s;
+
+
+
+    }
+
+    @media only screen and (min-width: 512px) {
+        body {
+            background-image: url(https://i.imgur.com/g55m6EJ.jpeg);
+            background-size: cover;
+            background-position: center;
+            transition: all linear 2s;
+
+            background-repeat: no-repeat;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        body {
+            background-image: url(https://i.imgur.com/Owy5FX0.jpg);
+            background-size: 100%;
+            background-position: 0px 80px;
+            transition: all linear 2s;
+            background-repeat: no-repeat;
+        }
+    }
+</style>
+
 <body>
-    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-              <img src="{% static 'images/3338.jpg' %}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-md-block">
+
+    <div class="container">
+        <div class=" text-2xl sm:text-3xl md:text-5xl font-sans font-bold text-gray-400 ">
+            <div class="flex text-center mt-96 justify-center">
                 <h5><span class="entry"></span></h5>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
 
-      
-      
-        <div class="container-fluid">  
-      
-      
-      
-      
-          <div class="row mgtop"  id="test">
-      
-              <div class="col-md-12 test1">
-      
-                  <div class="cal">
-                      <h1>Testimonials</h1>
-                  </div>
-                  <div id="myCarousel" class="carousel carouseln slide" data-ride="carousel">
-                      <!-- Carousel indicators -->
-                      <ol class="carousel-indicators">
-                          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                          <li data-target="#myCarousel" data-slide-to="1"></li>
-                          <li data-target="#myCarousel" data-slide-to="2"></li>
-                      </ol>   
-                      <!-- Wrapper for carousel items -->
-                      <div class="carousel-inner">
-                          <div class="item carousel-item active">
-                              <div class="img-box"><img src="{% static 'images/avatarm.png' %}" alt=""></div>
-                              <p class="testimonial">I am Sarveshkumar, my friend told me about this website , this website helped me alot  in finding the rooms near me.
-      </p>
-                              <p class="overview"><b>Sarveshkumar</b></p>
-                          </div>
-                          <div class="item carousel-item">
-                              <div class="img-box"><img src="{% static 'images/avatarm.png' %}" alt=""></div>
-                              <p class="testimonial">I have got a genuine and very quick response from the site. I am very happy with service of Tenantbuddy.org owner plans.</p>
-                              <p class="overview"><b>Dushyant Tupkar</b></p>
-                          </div>
-                          <div class="item carousel-item">
-                              <div class="img-box"><img src="{% static 'images/avatarf.png' %}" alt=""></div>
-                              <p class="testimonial">Excellent service and an equally involved team. I got a good deal on my property.</p>
-                              <p class="overview"><b>Aishwarya Patil</b></p>
-                          </div>
-                      </div>
-                      <!-- Carousel controls -->
-                      <a class="carousel-control carousel-controln left carousel-control-prev" href="#myCarousel" data-slide="prev">
-                          <i class="fa fa-angle-left"></i>
-                      </a>
-                      <a class="carousel-control carousel-controln right carousel-control-next" href="#myCarousel" data-slide="next">
-                          <i class="fa fa-angle-right"></i>
-                      </a>
-                  </div>
-          </div>
-      <!-----------------------------------TESTIMONIALS  CLOSES------------------------------------>
-      
-      </div><!--ROw CLOSES-->
-      
-      
-          </div>
 
-    </body>
+
+
+</body>
 
 {% include "includes/footer.html" %}
 

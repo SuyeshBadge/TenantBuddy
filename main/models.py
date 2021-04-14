@@ -27,3 +27,5 @@ class Room(models.Model):
     rState = models.CharField(max_length=100)
     rShare = models.IntegerField()
     rGirlsOnly = models.BooleanField(default=False)
+    rBathroom = models.IntegerField()
+    rType = models.CharField(max_length=100)
