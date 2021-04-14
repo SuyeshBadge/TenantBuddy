@@ -1,0 +1,9 @@
+
+Django
+Pillow
+psycopg2
+sql
+sqlparse
+gunicorn
+whitenoise
+django-heroku
