@@ -25,7 +25,7 @@ SECRET_KEY = '$7^psy*)k=bfeo+hwymb42-#f5u^opq6vye=vd0s_#4adk1p-%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'tenantbuddy.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
