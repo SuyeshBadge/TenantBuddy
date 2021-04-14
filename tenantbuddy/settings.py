@@ -76,8 +76,18 @@ WSGI_APPLICATION = 'tenantbuddy.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'd5k1d5deen1jvg',
+
+        'USER': 'rsatwresagnbgh',
+
+        'PASSWORD': '8f0f5b206b5bfb28a69db3e4a2757a5b6a2f6a0a16c114b620e9f69138cff1e6',
+
+        'HOST': 'ec2-34-233-0-64.compute-1.amazonaws.com',
+
+        'PORT': '5432',
+
     }
 }
 

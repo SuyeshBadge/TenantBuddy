@@ -88,6 +88,7 @@
                     <img class=" m-2 h-14" src="https://i.imgur.com/JOZuDNL.png" alt="LOGO">
                 </a>
             </div>
+            <!-- Top Navbar -->
             {% if not login %}
 
             <div
@@ -111,7 +112,7 @@
             <div
                 class="md:flex  transition-opacity justify-end	 duration-300 ease-in-out  hidden   px-3  font-semibold  mt-8">
                 <a class=" transition-all text-decoration-none duration-300 ease-in-out px-2 text-xl hover:text-blue-500 "
-                    href="/home"> Home</a>
+                    href="/owner/{{key}}"> Home</a>
                 <a class="transition-all duration-300 text-decoration-none ease-in-out px-2 text-xl hover:text-blue-500"
                     href="/addroom/{{key}}">
                     Add
@@ -126,6 +127,7 @@
 
             </div>
             {% endif %}
+            <!-- Bottom navbar -->
             {% if not login %}
 
             <div
@@ -151,22 +153,25 @@
             {% endif %}
 
             {% if login %}
-            <div class="flex transition-opacity duration-300 ease-in-out opacity-0 px-3 justify-end font-bold md:opacity-100
-        absolute inset-x-0 top-5">
-                <a class=" transition-all duration-300 ease-in-out text-decoration-none px-2 text-xl hover:text-blue-500 "
-                    href="/home"> Home</a>
-                <a class="transition-all duration-300 ease-in-out text-decoration-none px-2 text-xl hover:text-blue-500"
+            <div
+                class="animate__animated animate__slideInUp overflow-hidden fixed flex justify-center h-14 font-semibold  space-x-3 sm:space-x-10 inset-x-0 bottom-0  bg-gradient-to-r from-green-100 to-blue-300 shadow-lg md:hidden">
+                <a class=" transition-all duration-300 ease-in-out  mt-3 text-lg hover:text-blue-500 text-decoration-none "
+                    href="/owner/{{key}}">
+                    Home</a>
+                <a class="transition-all duration-300 ease-in-out text-decoration-none mt-3 text-lg hover:text-blue-500"
                     href="/addroom/{{key}}">
-                    Add
-                    Room</a>
-                <a class="transition-all duration-300 ease-in-out px-2 text-decoration-none text-xl hover:text-blue-500"
+                    Add Rooms</a>
+                <a class="transition-all duration-300 ease-in-out text-decoration-none mt-3 text-lg hover:text-blue-500"
                     href="/profile/{{key}}">
                     Profile</a>
-                <a class=" transition-all duration-300 ease-in-out text-decoration-none px-2 text-xl hover:text-blue-500"
-                    href="/index"> Log Out
-                </a>
-                {% endif %}
+
+                <a class=" transition-all duration-300 ease-in-out text-decoration-none mt-3 text-lg hover:text-blue-500"
+                    href="/index/">
+                    Log Out </a>
+
             </div>
+            {% endif %}
+
         </div>
 
     </div>
