@@ -66,13 +66,12 @@
                     <span><i class="fa fa-shower mr-2 hover:text-blue-500" aria-hidden="true"></i>
                         {{i.rBathroom}} Bathroom</span>
                     <span>
-                        {% if i.rType == "Duplex" %}
+                        {% if i.rType == "Bungalow" %}
                         <i class="fa fa-home fa-lg mr-2 hover:text-blue-500" aria-hidden="true"></i>
                         {% endif %}
                         {% if i.rType == "Flat" %}
                         <i class="fa fa-building mr-2 hover:text-blue-500" aria-hidden="true"></i>
                         {% endif %}
-
                         {{i.rType}}
                     </span>
                     <span><i class="fa fa-mobile fa-lg  hover:text-blue-500" aria-hidden="true"></i>
@@ -91,16 +90,18 @@
                 <!-- Owner -->
                 <div class="flex justify-between  max-h-max ml-6 mt-1 ">
                     <span class="text-xl italic font-bold ">
+                        {% if i.rOid.oGender == "F" %}
+                        <p>Mrs. {{i.rOid}}</p>
+                        {% endif %}
+                        {% if i.rOid.oGender == "M" %}
                         <p>Mr. {{i.rOid}}</p>
-
+                        {% endif %}
                     </span>
-                    <span
-                        class=" transition-all ease-in-out duration-500 text-xl font-bold bg-blue-300  px-3 rounded-md hover:text-blue-600  hover:bg-blue-200 ">
+                    <a href=" tel:+91 {{i.rOid.oMobile}}"
+                        class=" transition-all ease-in-out duration-500 text-xl font-bold bg-blue-300 text-decoration-none  px-3 rounded-md hover:text-blue-600  hover:bg-blue-200 ">
                         <i class="fa fa-phone " aria-hidden="true"></i>
-
-                        <a class="text-decoration-none " href=" tel:+91 {{i.rOid.oMobile}}"> Call</a>
-
-                    </span>
+                        Call
+                    </a>
                 </div>
             </div>
         </div>
