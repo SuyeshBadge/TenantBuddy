@@ -83,9 +83,19 @@
         <div
             class=" flex  justify-center sm:justify-start md:justify-between transition-all duration-600  bg-gradient-to-r from-green-100 to-blue-300 ease">
             <div class="h-20  ">
-                <a href="index">
+                {% if login %}
+                <a href="/owner/{{key}}">
                     <img class=" m-2 h-14" src="https://i.imgur.com/JOZuDNL.png" alt="LOGO">
                 </a>
+
+                {% endif %}
+                {% if not login %}
+                <a href="/index">
+                    <img class=" m-2 h-14" src="https://i.imgur.com/JOZuDNL.png" alt="LOGO">
+                </a>
+
+                {% endif %}
+
             </div>
             <!-- Top Navbar -->
             {% if not login %}
@@ -93,15 +103,15 @@
             <div
                 class="md:flex  transition-opacity justify-end	 duration-300 ease-in-out  hidden   px-3  font-semibold  mt-8">
                 <a class=" transition-all  duration-300 ease-in-out px-2 text-xl text-decoration-none hover:text-blue-500 "
-                    href="index"> Home</a>
+                    href="/index"> Home</a>
                 <a class="transition-all duration-300 ease-in-out px-2 text-xl hover:text-blue-500 text-decoration-none"
-                    href="room"> Rooms</a>
+                    href="/room"> Rooms</a>
                 <a class="transition-all duration-300 ease-in-out px-2 text-xl hover:text-blue-500 text-decoration-none"
-                    href="login"> Owner</a>
+                    href="/login"> Owner</a>
                 <a class=" transition-all  duration-300 ease-in-out px-2 text-xl hover:text-blue-500 text-decoration-none"
-                    href="about"> About Us</a>
+                    href="/about"> About Us</a>
                 <a class="text-decoration-none transition-all duration-300 ease-in-out px-2 text-xl hover:text-blue-500"
-                    href="contact"> Contact
+                    href="/contact"> Contact
                     Us</a>
 
             </div>
@@ -132,20 +142,20 @@
             <div
                 class="animate__animated animate__slideInUp overflow-hidden fixed flex justify-center h-14 font-semibold  space-x-3 sm:space-x-10 inset-x-0 bottom-0  bg-gradient-to-r from-green-100 to-blue-300 shadow-lg md:hidden">
                 <a class=" transition-all duration-300 ease-in-out  mt-3 text-lg hover:text-blue-500 text-decoration-none "
-                    href="index">
+                    href="/index">
                     Home</a>
                 <a class="transition-all duration-300 ease-in-out text-decoration-none mt-3 text-lg hover:text-blue-500"
-                    href="room">
+                    href="/room">
                     Rooms</a>
                 <a class="transition-all duration-300 ease-in-out text-decoration-none mt-3 text-lg hover:text-blue-500"
-                    href="login">
+                    href="/login">
                     Owner</a>
 
                 <a class=" transition-all duration-300 ease-in-out text-decoration-none mt-3 text-lg hover:text-blue-500"
-                    href="about">
+                    href="/about">
                     About </a>
                 <a class="transition-all duration-300 ease-in-out text-decoration-none mt-3 text-lg hover:text-blue-500"
-                    href="contact">
+                    href="/contact">
                     Contact
                     Us</a>
             </div>
