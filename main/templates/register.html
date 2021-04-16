@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/regStyle.css' %}">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
 
     <title>Register</title>
 </head>
@@ -15,97 +15,106 @@
 
 <!-- End Styling -->
 
-<body>
-    <div class=" container ">
-        <div class="  ">
-            <div class="">
-                <h3 class="text-center text-primary">Register</h3>
+<body class="bg-blue-100 my-32 md:my-52 font-sans">
+    <div class="container mx-auto bg-white text-center w-11/12 md:w-8/12 rounded-lg shadow-xl">
+        <div class="py-10 text-center text-3xl font-bold">
+            <h1 class="transition-all ease transform hover:scale-110 ">Register</h1>
+        </div>
+        <div class="form m-2">
+            <form action="/addroom/{{key}}" method="post">
+                {% csrf_token %}
+                <div class="grid grid-cols-1 align-center md:grid-cols-2">
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="area">First Name</label>
 
-            </div>
-
-            <div class=" d-flex justify-content-center p-4   ">
-                <form action="register" method="post">
-                    {% csrf_token %}
-                    <!-- First Name -->
-                    <div class="group">
-                        <input type="text" name="fname" id="fname" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label>First Name</label>
+                        <input
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            type="text" name="fname" id="fname" required />
                     </div>
-                    <!-- Last name -->
-                    <div class="group">
-                        <input type="text" name="lname" id="lname" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label>Last Name</label>
-                    </div>
-                    <!-- Email -->
-                    <div class="group">
-                        <input type="text" name="email" id="email" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label>Email</label>
-                    </div>
-                    <!-- Mobile -->
-                    <div class="group">
-                        <input type="text" name="mobile" id="mobile" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label>Mobile</label>
-                    </div>
-                    <!-- Gender -->
-                    <div class="group">
-                        <div class="form-group col-md-12" style="margin:0% 5% 0% -1%;">
-                            <select id="Gender" class="form-control" placeholder="Gender" name="Gender" required>
-                                <option value="None" selected>Gender</option>
-                                <option value="M">Male</option>
-                                <option value="F">Female</option>
-                            </select>
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="area">Last Name</label>
 
-
-                        </div>
-
-
+                        <input
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            type="text" name="lname" id="lname" required />
                     </div>
-                    <!-- Date of Birth -->
-                    <div class="group">
-                        <input type="date" name="dob" id="today" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label>Date of Birth</label>
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="area">Email</label>
+
+                        <input
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            type="email" name="email" id="email" required />
                     </div>
-                    <!-- Password -->
-                    <div class="group">
-                        <input type="password" name="pass1" id="pass1" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label>Password</label>
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="area">Mobile</label>
+
+                        <input
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            type="number" name="mobile" id="mobile" required />
                     </div>
-                    <div class="group">
-                        <input type="password" name="pass2" id="pass2" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label>Confirm Password</label>
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="area">Gender</label>
+
+                        <select
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            name="Gender" id="Gender" required>
+
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </div>
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="area">Date of Birth</label>
+
+                        <input
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            type="date" name="dob" id="dob" required />
+                    </div>
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="area">Password</label>
+
+                        <input
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            type="password" name="pass1" id="pass1" required />
+                    </div>
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="area">Confirm Password</label>
+
+                        <input
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            type="password" name="pass2" id="pass2" required />
                     </div>
 
-
-                    <!-- Submit -->
-                    <div class=" text-center">
-                        <input type="submit" class="btn btn-primary" />
-                    </div>
-
-
-                </form>
-            </div>
+                </div>
+                <div class=" justify-center">
+                    <input type="submit"
+                        class="transition duration-500 ease-in-out font-bold text-lg bg-blue-300 rounded px-3 py-1 m-3 transform hover:scale-105 hover:bg-blue-400 hover:"
+                        value="Submit" />
+                </div>
+            </form>
         </div>
     </div>
-
-    {% include "includes/footer.html" %}
-    <!-- <script>
-        let today = new Date().toISOString().substr(0, 10);
-        document.querySelector("#today").value = today;
-    </script> -->
 </body>
+
+
+
+{% include "includes/footer.html" %}
+
 
 </html>
