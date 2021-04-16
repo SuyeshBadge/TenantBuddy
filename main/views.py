@@ -36,6 +36,9 @@ def addroom(request, Oid):
         room.rCity = request.POST.get("city")
         room.rState = request.POST.get("state")
         room.rShare = request.POST.get("share")
+        room.rBathroom = request.POST.get("bathroom")
+        room.rType = request.POST.get("rtype")
+
         room.rPrice = request.POST.get("price")
         room.rGirlsOnly = request.POST.get("girls")
         room.save()

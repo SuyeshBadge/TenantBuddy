@@ -54,9 +54,31 @@
 
                         <input
                             class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
-                            type="text" name="share" id="share" placeholder="No. of persons per Room" required />
+                            type="number" name="share" id="share" placeholder="No. of persons per Room" required />
                     </div>
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="area">Bathrooms</label>
 
+                        <input
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            type="number" name="bathroom" id="bathroom" placeholder="No. of Bathrooms in the Room"
+                            required />
+                    </div>
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="area">Type of Residency</label>
+
+                        <select
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            name="rtype" id="rtype" required>
+
+                            <option value="Flat">Flat</option>
+                            <option value="Bungalow">Bungalow</option>
+                        </select>
+                    </div>
                     <div class="text-left text-xl p-6">
                         <label
                             class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
@@ -64,7 +86,7 @@
 
                         <input
                             class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
-                            type="text" name="price" id="price" placeholder="Rent of the Room" required />
+                            type="number" name="price" id="price" placeholder="Rent of the Room" required />
                     </div>
                     <div class="text-left text-xl p-6">
                         <label
