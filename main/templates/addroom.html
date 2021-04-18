@@ -17,7 +17,7 @@
     <div class="container mx-auto bg-white text-center w-11/12 md:w-8/12 rounded-lg shadow-lg">
         <div class="py-10 text-center text-3xl font-bold">Add New Room</div>
         <div class="form m-2">
-            <form action="/addroom/{{key}}" method="post">
+            <form action="/addroom/{{key}}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="grid grid-cols-1 align-center md:grid-cols-2">
                     <div class="text-left text-xl p-6">
@@ -100,6 +100,15 @@
                             <input class="m-2 focus:outline-none" type="radio" name="girls" value="False"
                                 id="girlsNo" />
                         </div>
+                    </div>
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="area">Upload image of the room </label>
+
+                        <input accept=".png, .jpg, .jpeg"
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            type="file" name="pic" id="pic" placeholder="Image" required />
                     </div>
                 </div>
                 <div>

@@ -1,7 +1,6 @@
 from django.shortcuts import redirect, render
 from main.models import *
 import base64
-
 # Create your views here.
 
 
@@ -16,8 +15,8 @@ def about(request):
 def rooms(request):
     rooms = Room.objects.all()
 
-    l = [1, 2, 3, 4]
-
+    for i in rooms:
+        print(i.rPic)
     return render(request, 'rooms.html', {'list': rooms})
 
 
@@ -38,10 +37,13 @@ def addroom(request, Oid):
         room.rShare = request.POST.get("share")
         room.rBathroom = request.POST.get("bathroom")
         room.rType = request.POST.get("rtype")
-
         room.rPrice = request.POST.get("price")
         room.rGirlsOnly = request.POST.get("girls")
+        room.rPic = request.FILES['pic']
+        user.oRooms += 1
         room.save()
+        user.save()
+
         return render(request, 'addroom.html', {'user': user, 'login': login, 'key': Oid, 'error': 'Room Added SuccessFully'})
 
     else:

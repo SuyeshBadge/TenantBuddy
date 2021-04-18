@@ -1,7 +1,16 @@
 from django.db import models
 from django.db.models.deletion import CASCADE
-
+import os
 # Create your models here.
+
+
+def path_and_rename(instance, filename):
+    upload_to = 'rooms/'
+    ext = filename.split('.')[-1]
+    filename = 'user{}room{}.{}'.format(
+        instance.rOid.oId, instance.rOid.oRooms+1, ext)
+
+    return os.path.join(upload_to, filename)
 
 
 class Owner(models.Model):
@@ -12,7 +21,9 @@ class Owner(models.Model):
     oPassword = models.CharField(max_length=128)
     oMobile = models.BigIntegerField()
     oGender = models.CharField(max_length=4)
+    oRooms = models.IntegerField(default=0)
     oDOB = models.DateField()
+    oProfile = models.ImageField(null=True)
 
     def __str__(self):
         return f'{self.oFname} {self.oLname}'
@@ -29,3 +40,4 @@ class Room(models.Model):
     rGirlsOnly = models.BooleanField(default=False)
     rBathroom = models.IntegerField()
     rType = models.CharField(max_length=100)
+    rPic = models.ImageField(upload_to=path_and_rename, null=True)
