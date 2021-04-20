@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -144,21 +145,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # Aws S3 Configuration
 AWS_ACCESS_KEY_ID = 'AKIAR6UF5G3MHAXDU6NA'
 AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'tenantbuddy'
+AWS_STORAGE_BUCKET_NAME = 'tenantbuddy1-files'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-
-#
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-}
-AWS_LOCATION = 'static'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'mysite/static'),
-]
-STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
