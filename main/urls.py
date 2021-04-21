@@ -11,6 +11,8 @@ urlpatterns = [
     path('login', login, name='login'),
     path('register', register, name='register'),
     path('addroom/<Oid>', addroom, name='addroom'),
+    path('contact', contact, name='contact'),
+
 
 
 ]

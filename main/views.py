@@ -14,9 +14,6 @@ def about(request):
 
 def rooms(request):
     rooms = Room.objects.all()
-
-    for i in rooms:
-        print(i.rPic)
     return render(request, 'rooms.html', {'list': rooms})
 
 
@@ -124,3 +121,7 @@ def login(request):
             return render(request, 'login.html', {'error': "Email Doesn't Exist"})
     else:
         return render(request, 'login.html')
+
+
+def contact(request):
+    return render(request, 'contact.html')
