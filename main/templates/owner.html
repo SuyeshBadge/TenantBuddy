@@ -27,21 +27,22 @@
 </style>
 
 <body class="bg-blue-200">
-    <div class="mt-20 ">
+    <div class="mt-20  ">
         <div class="flex flex-col max-h-max rounded m-8 bg-blue-300 justify-between sm:flex-row py-4 ">
 
-            <div class="w-40  mx-auto md:mx-8 ">
+            <div class=" py-3 mx-auto md:mx-8 ">
                 {% if user.oProfile.url == 'null' %}
                 <img src="{% static 'images/avatarm.png' %}" alt="beds">
 
                 {% endif %}
                 {% if user.oProfile.url is not null %}
-                <img class="rounded-xl" src="{{user.oProfile.url}}" alt="beds">
+                <img class="rounded-full transform scale-125 border-double w-40 h-40 object-cover border-4 border-blue-600"
+                    src="{{user.oProfile.url}}" alt="beds">
 
                 {% endif %}
             </div>
 
-            <div class=" grid grid-cols-1 font-bold text-xl p-4 object-left	 ">
+            <div class=" grid grid-cols-1 xl:grid-cols-2 md:pr-24 gap-4 font-bold text-xl p-4 object-left ">
                 <div class="flex gap-2">
                     <h1> Name :</h1>
                     <h1 class="text-blue-600">{{user.oFname}} {{user.oLname}}</h1>
@@ -50,9 +51,9 @@
                     <h1>Email :</h1>
                     <h1 class="text-blue-600 capitalize"> {{user.oEmail}}</h1>
                 </div>
-                <div class="flex gap-2">
+                <div class="flex gap-2  ">
                     <h1> Date of Birth :</h1>
-                    <h1 class="text-blue-600"> {{user.oDOB}}</h1>
+                    <h1 class="text-blue-600 "> {{user.oDOB}}</h1>
                 </div>
                 <div class="flex gap-2">
                     <h1> Mobile :</h1>
@@ -65,90 +66,82 @@
             </div>
         </div>
     </div>
-    {% for i in list  %}
+    <div class=" mx-auto mb-20 justify-items-center  grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 ">
+        {% for i in list  %}
 
 
-    <div class="flex  card rounded-xl hover:shadow-xl  mx-auto ">
-        <!-- Image -->
-        <div class="top-0">
-            <img class="absolute h-48   object-cover w-full rounded-t-lg" src="{{i.rPic.url}}" alt="beds">
-            <!-- Price tag -->
-            <p
-                class="transition-all my-3 ease-in-out duration-500 absolute mt-14 rounded-r-lg text-lg font-semibold hover:bg-blue-500 hover:text-blue-100 hover:shadow  bg-blue-300 max-h-max max-w-max px-3 ">
-                Rs. {{i.rPrice}}
-            </p>
-            {% if i.rGirlsOnly %}
+        <div class="flex  card rounded-xl hover:shadow-xl   mx-auto  ">
+            <!-- Image -->
+            <div class="top-0">
+                <img class="absolute h-48   object-cover w-full rounded-t-lg" src="{{i.rPic.url}}" alt="beds">
+                <!-- Price tag -->
+                <p
+                    class="transition-all my-3 ease-in-out duration-500 absolute mt-14 rounded-r-lg text-lg font-semibold hover:bg-blue-500 hover:text-blue-100 hover:shadow  bg-blue-300 max-h-max max-w-max px-3 ">
+                    Rs. {{i.rPrice}}
+                </p>
+                {% if i.rGirlsOnly %}
 
 
-            <span class="absolute">
-                <h1
-                    class="transition-all rounded-tl-lg ease-in-out duration-500 px-2 text-xl font-bold text-red-200 bg-red-500 rounded-r-lg  border-2 hover:bg-red-100 hover:border-red-300 hover:text-red-600 ">
-                    Only For Girls</h1>
-            </span>
-            {% endif %}
-        </div>
-        <!-- Room Head -->
-        <div class="absolute mt-52  ml-2  bg-blue-30 max-w-max">
-            <span class="ml-4  text-2xl  border-double border-b-4 border-gray-400 font-bold">
-                {{i.rCity}}, {{i.rState}}
-            </span>
-            <!-- Room Body -->
-            <div class=" mx-10 my-3 text-md font-semibold grid grid-cols-2 gap-4 ">
-                <span>
-                    <i class="fa fa-bed mr-2 hover:text-blue-500" aria-hidden="true"></i>
-                    {{i.rShare}} Sharing</span>
-                <span><i class="fa fa-shower mr-2 hover:text-blue-500" aria-hidden="true"></i>
-                    {{i.rBathroom}} Bathroom</span>
-                <span>
-                    {% if i.rType == "Bungalow" %}
-                    <i class="fa fa-home fa-lg mr-2 hover:text-blue-500" aria-hidden="true"></i>
-                    {% endif %}
-                    {% if i.rType == "Flat" %}
-                    <i class="fa fa-building mr-2 hover:text-blue-500" aria-hidden="true"></i>
-                    {% endif %}
-
-                    {{i.rType}}
+                <span class="absolute">
+                    <h1
+                        class="transition-all rounded-tl-lg ease-in-out duration-500 px-2 text-xl font-bold text-red-200 bg-red-500 rounded-r-lg  border-2 hover:bg-red-100 hover:border-red-300 hover:text-red-600 ">
+                        Only For Girls</h1>
                 </span>
-                <span><i class="fa fa-mobile fa-lg  hover:text-blue-500" aria-hidden="true"></i>
-                    +91 {{i.rOid.oMobile}}</span>
-
+                {% endif %}
             </div>
-            <!-- Full Address -->
-            <div class="mx-10 my-3 text-md font-semibold grid grid-cols-1 gap-4">
-                <span>
-                    <!-- <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> -->
-                    <p class="text-md capitalize font-semibold">
-                        <i class="fa fa-map-marker fa-lg pr-2" aria-hidden="true"></i> {{i.rAddress}}
-                    </p>
+            <!-- Room Head -->
+            <div class="absolute mt-52  ml-2  bg-blue-30 max-w-max">
+                <span class="ml-4  text-2xl  border-double border-b-4 border-gray-400 font-bold">
+                    {{i.rCity}}, {{i.rState}}
                 </span>
-            </div>
-            <!-- Owner -->
-            <div class="flex justify-between  max-h-max ml-6  mt-10 ">
-                <span class="text-xl italic font-bold ">
-                    {% if i.rOid.oGender == "F" %}
-                    <p>Mrs. {{i.rOid}}</p>
+                <!-- Room Body -->
+                <div class=" mx-10 my-3 text-md font-semibold grid grid-cols-2 gap-4 ">
+                    <span>
+                        <i class="fa fa-bed mr-2 hover:text-blue-500" aria-hidden="true"></i>
+                        {{i.rShare}} Sharing</span>
+                    <span><i class="fa fa-shower mr-2 hover:text-blue-500" aria-hidden="true"></i>
+                        {{i.rBathroom}} Bathroom</span>
+                    <span>
+                        {% if i.rType == "Bungalow" %}
+                        <i class="fa fa-home fa-lg mr-2 hover:text-blue-500" aria-hidden="true"></i>
+                        {% endif %}
+                        {% if i.rType == "Flat" %}
+                        <i class="fa fa-building mr-2 hover:text-blue-500" aria-hidden="true"></i>
+                        {% endif %}
 
-                    {% endif %}
-                    {% if i.rOid.oGender == "M" %}
-                    <p>Mr. {{i.rOid}}</p>
+                        {{i.rType}}
+                    </span>
+                    <span><i class="fa fa-mobile fa-lg  hover:text-blue-500" aria-hidden="true"></i>
+                        +91 {{i.rOid.oMobile}}</span>
 
-                    {% endif %}
+                </div>
+                <!-- Full Address -->
+                <div class="mx-10 my-3 text-md font-semibold grid grid-cols-1 gap-4">
+                    <span>
+                        <!-- <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> -->
+                        <p class="text-md capitalize font-semibold">
+                            <i class="fa fa-map-marker fa-lg pr-2" aria-hidden="true"></i> {{i.rAddress}}
+                        </p>
+                    </span>
+                </div>
+                <!-- Owner -->
+                <div class="flex justify-center  max-h-max   mt-10 ">
 
-
-                </span>
-                <a href=" tel:+91 {{i.rOid.oMobile}}"
-                    class=" transition-all ease-in-out duration-500 text-xl font-bold bg-blue-300 text-decoration-none mr-3 px-3 rounded-md hover:text-blue-600  hover:bg-blue-200 ">
-                    <i class="fa fa-phone " aria-hidden="true"></i>
-                    Call
-                </a>
+                    <form action="/delroom/{{key}}" method="post">
+                        {% csrf_token %}
+                        <div class=" transition-all ease-in-out duration-500 text-xl font-bold bg-blue-300 text-decoration-none
+                    mr-3 px-3 py-1 rounded-md hover:text-blue-600 ">
+                            <i class="fa fa-trash " aria-hidden="true"></i>
+                            <input type="hidden" name="roomid" id="roomid" value="{{i.rId}}">
+                            <input type="submit" class=" bg-blue-300 font-bold" name="del" id="del" value="Delete">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-
-
     {% include "includes/footer.html" %}
-
 </body>
 
 </html>

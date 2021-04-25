@@ -127,3 +127,21 @@ def login(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+
+def delroom(request, Oid):
+    s2byt = Oid.encode("ascii")
+    s2b64byt = base64.b64decode(s2byt)
+    key1 = s2b64byt.decode("ascii")
+    print(key1)
+    uid, fname, lname, login = key1.split('_')
+    user = Owner.objects.get(oId=uid)
+    if request.method == 'POST':
+        roomid = request.POST.get('roomid')
+        room1 = Room.objects.get(rId=roomid)
+        user.oRooms -= 1
+        user.save()
+        room1.delete()
+        return redirect('owner', Oid)
+    else:
+        return redirect('owner', Oid)

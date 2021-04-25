@@ -29,9 +29,12 @@ if os.environ.get('DEBUG_VAL') == 'False':
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'tenantbuddy.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', 'tenantbuddy.herokuapp.com',
+                 '127.0.0.1', '192.168.0.106']
 
-
+# SECURE_SSL_REDIRECT = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 # Application definition
 
 INSTALLED_APPS = [
