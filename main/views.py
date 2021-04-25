@@ -55,7 +55,9 @@ def owner(request, Oid):
     print(key1)
     uid, fname, lname, login = key1.split('_')
     user = Owner.objects.get(oId=uid)
-    return render(request, 'owner.html', {'user': user, 'login': login, 'key': Oid, 'error': 'Login Success'})
+    rooms = Room.objects.all().filter(rOid=user)
+    print(rooms)
+    return render(request, 'owner.html', {'user': user, 'login': login, 'key': Oid, 'error': 'Login Success', 'list': rooms})
 
 
 def profile(request, Oid):

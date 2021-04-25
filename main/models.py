@@ -13,6 +13,14 @@ def path_and_rename(instance, filename):
     return os.path.join(upload_to, filename)
 
 
+def pathrename(instance, filename):
+    upload_to = 'profiles/'
+    ext = filename.split('.')[-1]
+    filename = '{}{}.{}'.format(instance.oId, instance.oFname, ext)
+
+    return os.path.join(upload_to, filename)
+
+
 class Owner(models.Model):
     oId = models.AutoField(primary_key=True)
     oFname = models.CharField(max_length=100)
@@ -20,10 +28,10 @@ class Owner(models.Model):
     oEmail = models.EmailField(unique=True)
     oPassword = models.CharField(max_length=128)
     oMobile = models.BigIntegerField()
-    oGender = models.CharField(max_length=4)
+    oGender = models.CharField(max_length=4, null=True)
     oRooms = models.IntegerField(default=0)
     oDOB = models.DateField()
-    oProfile = models.ImageField(null=True)
+    oProfile = models.ImageField(upload_to=pathrename, default='avatarm.png')
 
     def __str__(self):
         return f'{self.oFname} {self.oLname}'
