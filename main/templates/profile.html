@@ -9,10 +9,77 @@
     <title>Profile</title>
 </head>
 
-<body>
+<body class="bg-blue-100 my-32 md:my-52 font-sans">
+    <div class="container mx-auto bg-white text-center w-11/12 md:w-8/12 rounded-lg shadow-xl">
+        <div class="py-10 text-center text-3xl font-bold">
+            <h1 class="transition-all ease transform hover:scale-110 ">Edit Profile</h1>
+        </div>
+        <div class="form m-2">
+            <form action="/profile/{{key}}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="grid grid-cols-1 align-center md:grid-cols-2">
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="fname">First Name</label>
 
+                        <input
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            type="text" name="fname" id="fname" required value="{{user.oFname}}" />
+                    </div>
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="lname">Last Name</label>
 
-    {% include "includes/footer.html" %}
+                        <input
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            type="text" name="lname" id="lname" required value="{{user.oLname}}" />
+                    </div>
+
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="mobile">Mobile</label>
+
+                        <input
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            type="number" name="mobile" id="mobile" value="{{user.oMobile}}" required />
+                    </div>
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="gender">Gender</label>
+
+                        <select
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            name="Gender" id="Gender" value="{{user.oGender}}" required>
+
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="text-left text-xl p-6">
+                        <label
+                            class="pl-3 antialiased italic font-semibold transition duration-300 ease-in-out hover:text-blue-300"
+                            for="area">Upload Your profile pic </label>
+
+                        <input accept=".png, .jpg, .jpeg"
+                            class="w-full transition duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                            type="file" name="pic" id="pic" />
+                    </div>
+
+                </div>
+                <div class=" justify-center">
+                    <input type="submit"
+                        class="transition duration-500 ease-in-out font-bold text-lg bg-blue-300 rounded px-3 py-1 m-3 transform hover:scale-105 hover:bg-blue-400 hover:"
+                        value="Submit" />
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+{% include "includes/footer.html" %}
 
 </html>

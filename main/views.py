@@ -68,7 +68,17 @@ def profile(request, Oid):
     print(key1)
     uid, fname, lname, login = key1.split('_')
     user = Owner.objects.get(oId=uid)
-    return render(request, 'profile.html', {'user': user, 'login': login, 'key': Oid})
+    if request.method == "POST":
+        user.oFname = request.POST.get("fname")
+        user.oLname = request.POST.get("lname")
+        user.oMobile = request.POST.get("mobile")
+        user.oGender = request.POST.get("Gender")
+        user.oProfile = request.FILES['pic']
+        user.save()
+        return render(request, 'profile.html', {'user': user, 'login': login, 'key': Oid, 'error': "Profile Updated Successfully"})
+
+    else:
+        return render(request, 'profile.html', {'user': user, 'login': login, 'key': Oid})
 
 
 def register(request):
