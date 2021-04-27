@@ -13,7 +13,7 @@ def about(request):
 
 
 def rooms(request):
-    rooms = Room.objects.all()
+    rooms = Room.objects.all().order_by('-rPrice')
     return render(request, 'rooms.html', {'list': rooms})
 
 
