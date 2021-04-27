@@ -86,13 +86,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-        'NAME': 'd5k1d5deen1jvg',
+        'NAME': 'dags8djkkqh3ee',
 
-        'USER': 'rsatwresagnbgh',
+        'USER': 'rxohhrcfgpfllk',
 
-        'PASSWORD': '8f0f5b206b5bfb28a69db3e4a2757a5b6a2f6a0a16c114b620e9f69138cff1e6',
+        'PASSWORD': '56cfd7e878cac042b784651f77bd478e23cda6bfbeb07cda3f8ce1387b7b946b',
 
-        'HOST': 'ec2-34-233-0-64.compute-1.amazonaws.com',
+        'HOST': 'ec2-184-73-198-174.compute-1.amazonaws.com',
 
         'PORT': '5432',
 
@@ -156,6 +156,7 @@ AWS_STORAGE_BUCKET_NAME = 'tenantbuddy'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 AWS_DEFAULT_ACL = 'public-read'
+AWS_S3_FILE_OVERWRITE = True
 
 AWS_LOCATION = 'static'
 STATICFILES_DIRS = [
