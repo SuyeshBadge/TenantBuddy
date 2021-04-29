@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include "includes/header.html" %}
+{% load static %}
 
 <head>
     <meta charset="UTF-8">
@@ -9,21 +10,162 @@
     <title>About Us</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
+<style>
+    .card {
+        width: 300px;
+        height: 370px;
+    }
 
-<body class=" bg-gradient-to-r from-blue-300 to-green-100 my-32 md:my-52 font-sans">
+    .card img {
+        width: 150px;
+        height: 150px;
+    }
+</style>
+
+<body class=" bg-gradient-to-r from-blue-300 to-green-100 my-32  font-sans">
     <div class=" mx-auto text-center ">
         <div class="">
-            <div class="">
-                <h1 class="text-3xl m-32 font-bold mb-4">About Us</h1>
-                <p class="text-xl md:px-44 font-semibold">We are here to give seamless
-                    access to the affordable rooms for the needy peoples. The name of the company is “TENANTBUDDY”.
-                    This is important because the people like students and bachelors always need to find Rooms by
-                    going Door to Door for searching of rooms.
-                    We will let the peoples find all the available room in their nearby area at an affordable price
-                    range on their Mobile phone or computer. Our main focus is on those peoples who are outsider for
-                    that local area and are less known about the place.
-                </p>
+            <h1 class="text-4xl  font-bold mb-4">About Us</h1>
+            <p class="text-2xl px-8 md:px-44 font-semibold">We are here to give seamless
+                access to the affordable rooms for the needy peoples. The name of the company is “TENANTBUDDY”.
+                This is important because the people like students and bachelors always need to find Rooms by
+                going Door to Door for searching of rooms.
+                We will let the peoples find all the available room in their nearby area at an affordable price
+                range on their Mobile phone or computer. Our main focus is on those peoples who are outsider for
+                that local area and are less known about the place.
+            </p>
+        </div>
+        <div>
+            <h1 class="text-4xl  font-bold mb-4 mt-14 ">
+                Our team
+            </h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
+                <div
+                    class="mx-auto mt-8 transform hover:scale-105 transation-all ease-in-out duration-500 bg-gradient-to-br from-green-300 to-indigo-400 shadow-md hover:shadow-lg card rounded-lg ">
+                    <img src="{% static 'images/suyesh.jpg' %}" alt="Suyesh"
+                        class=" mx-auto transform mt-8  m-2 rounded-full border-4 border-dashed border-blue-800">
+                    <h1 class="text-xl font-bold">
+                        Suyesh Badge <br>
+                    </h1>
+                    <h1 class="text-xl font-semibold">Founder, TenantBuddy</h1>
+
+
+                    <span class="text-4xl text-blue-900 ">
+                        <a href="https://www.facebook.com/suyesh.badge/">
+                            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                    <span class="text-4xl text-red-400">
+                        <a href="https://www.instagram.com/_suyesh._.badge_/">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                    <span class="text-4xl text-blue-600">
+                        <a href="https://www.linkedin.com/in/suyesh-badge-536000177/">
+                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                    <span class="text-4xl">
+                        <a href="https://github.com/SuyeshBadge">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                </div>
+                <div
+                    class="mx-auto mt-8 transform hover:scale-105 transation-all ease-in-out duration-500 bg-gradient-to-br from-green-300 to-indigo-400 shadow-md hover:shadow-lg card rounded-lg ">
+                    <img src="{% static 'images/zeeshan.jpeg' %}" alt="Zeeshan"
+                        class=" mx-auto transform mt-8  m-2 rounded-full border-4 border-dashed border-blue-800">
+                    <h1 class="text-xl font-bold">
+                        Zeeshan Shaikh<br>
+                    </h1>
+                    <h1 class="text-lg font-semibold">Co-Founder/CEO, TenantBuddy</h1>
+
+
+                    <span class="text-4xl text-blue-900 ">
+                        <a href="https://www.facebook.com/zeeshan.sheikh.07">
+                            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                    <span class="text-4xl text-red-400">
+                        <a href="https://www.instagram.com/zeeeeshan07/">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                    <span class="text-4xl text-blue-600">
+                        <a href="http://linkedin.com/in/zeeshan-shaikh-9028811a3">
+                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                    <span class="text-4xl">
+                        <a href=" https://github.com/zeeshanshaikh07">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                </div>
+                <div
+                    class="mx-auto mt-8 transform hover:scale-105 transation-all ease-in-out duration-500 bg-gradient-to-br from-green-300 to-indigo-400 shadow-md hover:shadow-lg card rounded-lg ">
+                    <img src="{% static 'images/tushar.jpeg' %}" alt="Tushar"
+                        class=" mx-auto transform mt-8  m-2 rounded-full border-4 border-dashed border-blue-800">
+                    <h1 class="text-xl font-bold">
+                        Tushar Parvez <br>
+                    </h1>
+                    <h1 class="text-xl font-semibold">CTO, TenantBuddy</h1>
+
+
+                    <span class="text-4xl text-blue-900 ">
+                        <a href="https://www.facebook.com/tushar.saudagar.5">
+                            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                    <span class="text-4xl text-red-400">
+                        <a href="https://www.instagram.com/tushar_prvz/">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                    <span class="text-4xl text-blue-600">
+                        <a href="https://www.linkedin.com/in/tushar-parvez-0808891a3/">
+                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                    <span class="text-4xl">
+                        <a href="https://github.com/tusharparvez">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                </div>
+                <div
+                    class="mx-auto mt-8 transform hover:scale-105 transation-all ease-in-out duration-500 bg-gradient-to-br from-green-300 to-indigo-400 shadow-md hover:shadow-lg card rounded-lg ">
+                    <img src="{% static 'images/saket.jpeg' %}" alt="Saket"
+                        class=" mx-auto transform mt-8  m-2 rounded-full border-4 border-dashed border-blue-800">
+                    <h1 class="text-xl font-bold">
+                        Saket Khandarkar <br>
+                    </h1>
+                    <h1 class="text-xl font-semibold">CFO, TenantBuddy</h1>
+
+
+                    <span class="text-4xl text-blue-900 ">
+                        <a href="https://www.facebook.com/saket.khandarkar">
+                            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                    <span class="text-4xl text-red-400">
+                        <a href="https://www.instagram.com/octopus_5_/">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                    <span class="text-4xl text-blue-600">
+                        <a href="https://www.linkedin.com/in/saket-khandarkar-2198811a3">
+                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                    <span class="text-4xl hidden">
+                        <a href="https://github.com/SuyeshBadge">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                </div>
             </div>
+
         </div>
     </div>
 </body>

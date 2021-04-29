@@ -135,10 +135,6 @@ def login(request):
         return render(request, 'login.html')
 
 
-def contact(request):
-    return render(request, 'contact.html')
-
-
 def delroom(request, Oid):
     s2byt = Oid.encode("ascii")
     s2b64byt = base64.b64decode(s2byt)

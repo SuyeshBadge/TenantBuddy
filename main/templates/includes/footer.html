@@ -1,9 +1,35 @@
 <!DOCTYPE html>
 {% load static %}
-{% if error %}
-
-
-{% endif %}
+<script>
+    window.Papercups = {
+        config: {
+            accountId: "963fc736-aefe-44f5-9a76-0113ddf8af10",
+            title: "Welcome to TenantBuddy",
+            subtitle: "Ask us anything in the chat window below 😊",
+            primaryColor: "#0693e3",
+            greeting: "Hello There, Ask your Query below",
+            awayMessage: "Sorry, we are away at the moment. drop your message below we'll get in touch with you soon",
+            newMessagePlaceholder: "Start typing...",
+            showAgentAvailability: true,
+            agentAvailableText: "We're online right now!",
+            agentUnavailableText: "We're away at the moment.",
+            requireEmailUpfront: true,
+            iconVariant: "outlined",
+            baseUrl: "https://app.papercups.io",
+            // Optionally include data about your customer here to identify them
+            // customer: {
+            //   name: __CUSTOMER__.name,
+            //   email: __CUSTOMER__.email,
+            //   external_id: __CUSTOMER__.id,
+            //   metadata: {
+            //     plan: "premium"
+            //   }
+            // }
+        },
+    };
+</script>
+<script type="text/javascript" async defer src="https://app.papercups.io/widget.js"></script>
+<script type="text/javascript" async defer src="https://app.papercups.io/storytime.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.7/typed.min.js"></script>
 <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 
