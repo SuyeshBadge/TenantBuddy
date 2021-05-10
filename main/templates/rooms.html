@@ -28,10 +28,29 @@
     }
 </style>
 
-<body class="bg-blue-200">
+<body class="bg-blue-200 mt-32">
+    <div class="flex justify-center lg:justify-end mx-24 ">
+        <form action="room" method="post">
+            {% csrf_token %}
+            <div class="flex">
+                <div class="text-left text-xl p-6 ">
+                    <input
+                        class="w-full p-2 transition bg-blue-200 rounded-lg duration-500 ease-in-out border-solid border-b-2 border-blue-200 focus:border-blue-500 h-10 ml-1 focus:shadow-xl focus:outline-none"
+                        type="text" name="city" id="city" placeholder="Search the city" required />
+
+                </div>
+                <div class="text-xl py-7 -ml-12">
+                    <button>
+                        <i class="fa fa-search" aria-hidden="true"></i>
+
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
     <!-- Container  -->
-    <div
-        class="container mx-auto mb-20 justify-items-center  grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 mt-36">
+    <div class="container mx-auto mb-20 justify-items-center  grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 ">
         {% for i in list  %}
 
 
@@ -57,7 +76,7 @@
             </div>
             <!-- Room Head -->
             <div class="absolute mt-52  ml-2  bg-blue-30 max-w-max">
-                <span class="ml-4  text-2xl  border-double border-b-4 border-gray-400 font-bold">
+                <span class="ml-4  text-2xl capitalize  border-double border-b-4 border-gray-400 font-bold">
                     {{i.rCity}}, {{i.rState}}
                 </span>
                 <!-- Room Body -->

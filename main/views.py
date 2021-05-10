@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from main.models import *
+from main.models import Room, Owner
 import base64
 # Create your views here.
 
@@ -13,8 +13,16 @@ def about(request):
 
 
 def rooms(request):
-    rooms = Room.objects.all().order_by('-rPrice')
-    return render(request, 'rooms.html', {'list': rooms})
+    if request.method == 'POST':
+        print("nice")
+        rooms = rooms = Room.objects.all().filter(
+            rCity=str(request.POST.get('city')).lower()).order_by('-rPrice')
+        print(request.POST.get('city').lower())
+        return render(request, 'rooms.html', {'list': rooms})
+
+    else:
+        rooms = Room.objects.all().order_by('-rPrice')
+        return render(request, 'rooms.html', {'list': rooms})
 
 
 def addroom(request, Oid):
@@ -29,7 +37,7 @@ def addroom(request, Oid):
         room = Room()
         room.rOid = user
         room.rAddress = request.POST.get("area")
-        room.rCity = request.POST.get("city")
+        room.rCity = request.POST.get("city").lower()
         room.rState = request.POST.get("state")
         room.rShare = request.POST.get("share")
         room.rBathroom = request.POST.get("bathroom")
